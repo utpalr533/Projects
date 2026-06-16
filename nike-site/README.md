@@ -1,46 +1,59 @@
-# Astro Starter Kit: Basics
+# Nike-Site
+
+A premium, interactive landing page for Nike jackets built with **Astro**. Features a full-screen product carousel with smooth animations, a shopping cart system, and responsive design.
+
+## Features
+
+- **Product Carousel** — Swiper-based 4-slide carousel with fade transitions, parallax, and autoplay
+- **Shopping Cart** — Add/remove items, quantity controls, persistent storage via localStorage, badge count
+- **Search Overlay** — Live search filtering across all jackets with quick-add functionality
+- **Notification Toasts** — Smooth slide-in notifications on cart actions
+- **Smooth Scrolling** — Nav links scroll to content sections
+- **GSAP Animations** — Entry animations on page load (stagger, fade, slide)
+- **Fully Responsive** — Mobile-first design with breakpoints at 320px, 540px, 1150px, 1536px, and 2048px
+
+## Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| [Astro](https://astro.build) | Static site generation |
+| [Swiper](https://swiperjs.com) | Touch-enabled carousel |
+| [GSAP](https://gsap.com) | Page-load animations |
+| [Remix Icons](https://remixicon.com) | Icon set |
+| [Google Fonts (Montserrat)](https://fonts.google.com/specimen/Montserrat) | Typography |
+
+## Getting Started
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open **http://localhost:4321** in your browser.
 
-## 🚀 Project Structure
+## Commands
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | Action |
+|---------|--------|
+| `npm run dev` | Start dev server |
+| `npm run build` | Build to `./dist/` |
+| `npm run preview` | Preview production build |
+| `npm run astro` | Run Astro CLI |
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+## Project Structure
+
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+├── components/
+│   ├── Header.astro
+│   └── HomeSlider.astro
+├── layouts/
+│   └── Layout.astro
+└── pages/
+    └── index.astro
+public/
+└── assets/
+    ├── css/styles.css
+    ├── js/main.js
+    └── img/ (jacket images, logos)
+```

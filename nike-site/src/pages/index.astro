@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HomeSlider from '../components/HomeSlider.astro';
+---
+
+<Layout>
+  <Header />
+
+  <main class="main">
+    <HomeSlider />
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-desc">
+          Premium jackets designed for those who demand durability, comfort, and style in every condition.
+        </p>
+        <div class="about-grid">
+          <div class="about-card">
+            <span class="about-icon"><i class="ri-shield-check-line"></i></span>
+            <h3>Built to Last</h3>
+            <p>Reinforced seams and premium materials ensure your jacket withstands years of wear.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon"><i class="ri-empathize-line"></i></span>
+            <h3>Supreme Comfort</h3>
+            <p>Ergonomic design and soft linings provide all-day comfort without restricting movement.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon"><i class="ri-flashlight-line"></i></span>
+            <h3>Weather Ready</h3>
+            <p>From freezing winds to pouring rain, our jackets keep you protected in any environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg" id="categories">
+      <div class="container">
+        <h2 class="section-title">Our Collection</h2>
+        <p class="section-desc">
+          Four distinct styles engineered for every lifestyle and season.
+        </p>
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-img">
+              <img src="/assets/img/jacket-1.png" alt="Resistance jacket" />
+            </div>
+            <div class="category-body">
+              <h3>Resistance</h3>
+              <p class="category-desc">Durable materials, reinforced seams, and wind &amp; rain protection for any challenge.</p>
+              <div class="category-footer">
+                <span class="category-price">$110.00</span>
+                <button class="category-btn" data-id="1">
+                  <i class="ri-shopping-bag-4-fill"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-img">
+              <img src="/assets/img/jacket-2.png" alt="Comfy Snug jacket" />
+            </div>
+            <div class="category-body">
+              <h3>Comfy Snug</h3>
+              <p class="category-desc">Soft, lightweight warmth that hugs your body. Perfect for cold days without sacrificing style.</p>
+              <div class="category-footer">
+                <span class="category-price">$99.00</span>
+                <button class="category-btn" data-id="2">
+                  <i class="ri-shopping-bag-4-fill"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-img">
+              <img src="/assets/img/jacket-3.png" alt="Relaxed Fit jacket" />
+            </div>
+            <div class="category-body">
+              <h3>Relaxed Fit</h3>
+              <p class="category-desc">Uncompromising comfort with a relaxed fit. Ideal for a casual, modern look every day.</p>
+              <div class="category-footer">
+                <span class="category-price">$105.00</span>
+                <button class="category-btn" data-id="3">
+                  <i class="ri-shopping-bag-4-fill"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-img">
+              <img src="/assets/img/jacket-4.png" alt="Protective Type jacket" />
+            </div>
+            <div class="category-body">
+              <h3>Protective Type</h3>
+              <p class="category-desc">Maximum protection with thermal and waterproof technology. A barrier against the weather.</p>
+              <div class="category-footer">
+                <span class="category-price">$130.00</span>
+                <button class="category-btn" data-id="4">
+                  <i class="ri-shopping-bag-4-fill"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-desc">
+          Have questions? We'd love to hear from you. Get in touch with our team.
+        </p>
+        <div class="contact-container">
+          <div class="contact-info-grid">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ri-map-pin-line"></i></div>
+              <div>
+                <h4>Address</h4>
+                <p>123 Fashion Street, New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ri-phone-line"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ri-mail-line"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>support@jacketstore.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ri-time-line"></i></div>
+              <div>
+                <h4>Hours</h4>
+                <p>Mon–Fri: 9 AM – 8 PM</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <h3>Jacket Store</h3>
+        <p>Premium outerwear designed to withstand anything life throws at you.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-line"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">
+      <p>&copy; 2026 Jacket Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h3 class="cart-title">Your Cart</h3>
+        <button class="cart-close" id="cart-close" aria-label="Close cart">
+          <i class="ri-close-large-line"></i>
+        </button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span class="cart-total-price">$0.00</span>
+        </div>
+        <button class="cart-checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-overlay" id="search-overlay">
+    <button class="search-close" id="search-close" aria-label="Close search">
+      <i class="ri-close-large-line"></i>
+    </button>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search jackets..." />
+      <button aria-label="Search"><i class="ri-search-line"></i></button>
+    </div>
+  </div>
+
+  <div class="notification-container"></div>
+</Layout>

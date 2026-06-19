@@ -17,44 +17,69 @@ import Footer from "../components/Footer.astro";
     <section class="categories-grid container">
       <article class="category-card">
         <div class="category-img-wrapper">
-          <img src="/assets/img/jacket-1.png" alt="Men's Jackets" class="category-img" />
+          <img
+            src="/assets/img/jacket-1.png"
+            alt="Men's Jackets"
+            class="category-img"
+          />
         </div>
         <div class="category-info">
           <h2 class="category-name">Men's Collection</h2>
-          <p class="category-desc">Bold, rugged, and refined — jackets built for the modern man.</p>
+          <p class="category-desc">
+            Bold, rugged, and refined — jackets built for the modern man.
+          </p>
           <span class="category-count">12 styles</span>
         </div>
       </article>
 
       <article class="category-card">
         <div class="category-img-wrapper">
-          <img src="/assets/img/jacket-2.png" alt="Women's Jackets" class="category-img" />
+          <img
+            src="/assets/img/jacket-2.png"
+            alt="Women's Jackets"
+            class="category-img"
+          />
         </div>
         <div class="category-info">
           <h2 class="category-name">Women's Collection</h2>
-          <p class="category-desc">Elegant meets practical — effortlessly stylish outerwear for every occasion.</p>
+          <p class="category-desc">
+            Elegant meets practical — effortlessly stylish outerwear for every
+            occasion.
+          </p>
           <span class="category-count">10 styles</span>
         </div>
       </article>
 
       <article class="category-card">
         <div class="category-img-wrapper">
-          <img src="/assets/img/jacket-3.png" alt="Accessories" class="category-img" />
+          <img
+            src="/assets/img/jacket-3.png"
+            alt="Accessories"
+            class="category-img"
+          />
         </div>
         <div class="category-info">
           <h2 class="category-name">Accessories</h2>
-          <p class="category-desc">Complete your look with hats, gloves, scarves, and more.</p>
+          <p class="category-desc">
+            Complete your look with hats, gloves, scarves, and more.
+          </p>
           <span class="category-count">8 items</span>
         </div>
       </article>
 
       <article class="category-card">
         <div class="category-img-wrapper">
-          <img src="/assets/img/jacket-4.png" alt="Limited Edition" class="category-img" />
+          <img
+            src="/assets/img/jacket-4.png"
+            alt="Limited Edition"
+            class="category-img"
+          />
         </div>
         <div class="category-info">
           <h2 class="category-name">Limited Edition</h2>
-          <p class="category-desc">Exclusive drops you won't find anywhere else.</p>
+          <p class="category-desc">
+            Exclusive drops you won't find anywhere else.
+          </p>
           <span class="category-count">4 styles</span>
         </div>
       </article>
@@ -65,14 +90,14 @@ import Footer from "../components/Footer.astro";
 
 <style>
   .page-hero {
-    padding-block: 9rem 3rem;
+    padding-block: 5rem 2rem;
     background: var(--green-color-gradient);
     text-align: center;
     color: var(--white-color);
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -80,17 +105,18 @@ import Footer from "../components/Footer.astro";
   .page-subtitle {
     font-size: var(--normal-font-size);
     opacity: 0.9;
+    padding-inline: 1rem;
   }
 
   .categories-grid {
     display: grid;
-    gap: 2rem;
-    padding-block: 3rem 5rem;
+    gap: 1.25rem;
+    padding-block: 2rem 4rem;
   }
 
   .category-card {
     background: hsl(0, 0%, 98%);
-    border-radius: 1.5rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
   }
@@ -104,11 +130,11 @@ import Footer from "../components/Footer.astro";
     background: linear-gradient(135deg, hsl(0, 0%, 95%), hsl(0, 0%, 88%));
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .category-img {
-    width: 200px;
+    width: clamp(140px, 40vw, 200px);
     transition: transform 0.4s;
   }
 
@@ -117,11 +143,11 @@ import Footer from "../components/Footer.astro";
   }
 
   .category-info {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .category-name {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 4vw, 1.25rem);
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: hsl(0, 0%, 12%);
@@ -130,7 +156,7 @@ import Footer from "../components/Footer.astro";
   .category-desc {
     font-size: var(--small-font-size);
     color: hsl(0, 0%, 40%);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     line-height: 1.5;
   }
 
@@ -140,9 +166,16 @@ import Footer from "../components/Footer.astro";
     color: hsl(0, 0%, 60%);
   }
 
-  @media (width >= 640px) {
+  @media (width >= 480px) {
     .categories-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (width >= 768px) {
+    .page-hero {
+      padding-block: 7rem 3rem;
     }
   }
 
@@ -158,6 +191,17 @@ import Footer from "../components/Footer.astro";
     .categories-grid {
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
+      padding-block: 3rem 5rem;
+    }
+
+    .category-img-wrapper {
+      padding: 2rem;
+    }
+  }
+
+  @media (width >= 2048px) {
+    .page-hero {
+      zoom: 1.2;
     }
   }
 </style>

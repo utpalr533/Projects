@@ -51,19 +51,23 @@
   }
 
   .nav-logo img {
-    width: 50px;
+    width: clamp(40px, 10vw, 50px);
   }
 
   .nav-actions {
     display: flex;
     align-items: center;
-    column-gap: 0.5rem;
   }
 
   .nav-actions button {
     color: var(--white-color);
     font-size: 1.5rem;
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media (width <= 1150px) {
@@ -72,11 +76,16 @@
       top: -120%;
       left: 0;
       width: 100%;
+      height: 100dvh;
       background: hsla(0, 0%, 0%, 0.1);
-      backdrop-filter: blur(12px);
-      padding-block: 4rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding-block: min(6rem, 15vh) 2rem;
       z-index: 100;
       transition: top 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -91,7 +100,9 @@
     position: relative;
     color: var(--white-color);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    padding: 0.5rem 1rem;
+    display: inline-block;
   }
 
   .nav-link::after {
@@ -103,6 +114,7 @@
     left: 0;
     right: 0;
     bottom: -0.5rem;
+    margin-inline: auto;
     transition: width 0.4s;
   }
 
@@ -117,6 +129,11 @@
     color: var(--white-color);
     font-size: 1.5rem;
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .show-menu {
@@ -130,6 +147,7 @@
     height: 100%;
     background: hsla(0, 0%, 0%, 0.1);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     top: 0;
     left: 0;
     z-index: -1;
@@ -154,13 +172,19 @@
     }
 
     .nav-actions {
-      column-gap: 1rem;
+      column-gap: 0.5rem;
     }
 
     .nav-list {
       flex-direction: row;
       align-items: center;
-      column-gap: 4rem;
+      column-gap: clamp(2rem, 4vw, 4rem);
+    }
+  }
+
+  @media (width >= 2048px) {
+    .header {
+      zoom: 1.2;
     }
   }
 </style>

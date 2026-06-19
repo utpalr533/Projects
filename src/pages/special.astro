@@ -18,11 +18,18 @@ import Footer from "../components/Footer.astro";
       <article class="deal-card deal-featured">
         <div class="deal-badge">Best Seller</div>
         <div class="deal-img-wrapper">
-          <img src="/assets/img/jacket-2.png" alt="Comfy Snug" class="deal-img" />
+          <img
+            src="/assets/img/jacket-2.png"
+            alt="Comfy Snug"
+            class="deal-img"
+          />
         </div>
         <div class="deal-info">
           <h2 class="deal-name">Comfy Snug — Winter Pack</h2>
-          <p class="deal-desc">Lightweight warmth for the coldest months. Get the full winter experience.</p>
+          <p class="deal-desc">
+            Lightweight warmth for the coldest months. Get the full winter
+            experience.
+          </p>
           <div class="deal-pricing">
             <span class="deal-price">$79.00</span>
             <span class="deal-old-price">$99.00</span>
@@ -36,11 +43,17 @@ import Footer from "../components/Footer.astro";
       <article class="deal-card">
         <div class="deal-badge">-20%</div>
         <div class="deal-img-wrapper">
-          <img src="/assets/img/jacket-4.png" alt="Protective Type" class="deal-img" />
+          <img
+            src="/assets/img/jacket-4.png"
+            alt="Protective Type"
+            class="deal-img"
+          />
         </div>
         <div class="deal-info">
           <h2 class="deal-name">Protective Type</h2>
-          <p class="deal-desc">Weatherproof technology at an unbeatable price.</p>
+          <p class="deal-desc">
+            Weatherproof technology at an unbeatable price.
+          </p>
           <div class="deal-pricing">
             <span class="deal-price">$104.00</span>
             <span class="deal-old-price">$130.00</span>
@@ -52,7 +65,11 @@ import Footer from "../components/Footer.astro";
       <article class="deal-card">
         <div class="deal-badge">New</div>
         <div class="deal-img-wrapper">
-          <img src="/assets/img/jacket-3.png" alt="Relaxed Fit" class="deal-img" />
+          <img
+            src="/assets/img/jacket-3.png"
+            alt="Relaxed Fit"
+            class="deal-img"
+          />
         </div>
         <div class="deal-info">
           <h2 class="deal-name">Relaxed Fit</h2>
@@ -68,11 +85,17 @@ import Footer from "../components/Footer.astro";
       <article class="deal-card">
         <div class="deal-badge">Bundle</div>
         <div class="deal-img-wrapper">
-          <img src="/assets/img/jacket-1.png" alt="Resistance" class="deal-img" />
+          <img
+            src="/assets/img/jacket-1.png"
+            alt="Resistance"
+            class="deal-img"
+          />
         </div>
         <div class="deal-info">
           <h2 class="deal-name">Resistance + Beanie</h2>
-          <p class="deal-desc">Bundle and save on our toughest jacket with a matching beanie.</p>
+          <p class="deal-desc">
+            Bundle and save on our toughest jacket with a matching beanie.
+          </p>
           <div class="deal-pricing">
             <span class="deal-price">$125.00</span>
             <span class="deal-old-price">$145.00</span>
@@ -87,14 +110,14 @@ import Footer from "../components/Footer.astro";
 
 <style>
   .page-hero {
-    padding-block: 9rem 3rem;
+    padding-block: 5rem 2rem;
     background: var(--orange-color-gradient);
     text-align: center;
     color: var(--white-color);
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -102,17 +125,18 @@ import Footer from "../components/Footer.astro";
   .page-subtitle {
     font-size: var(--normal-font-size);
     opacity: 0.9;
+    padding-inline: 1rem;
   }
 
   .deals-grid {
     display: grid;
-    gap: 1.5rem;
-    padding-block: 3rem 5rem;
+    gap: 1.25rem;
+    padding-block: 2rem 4rem;
   }
 
   .deal-card {
     background: hsl(0, 0%, 98%);
-    border-radius: 1.5rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -129,8 +153,8 @@ import Footer from "../components/Footer.astro";
 
   .deal-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.75rem;
+    left: 0.75rem;
     background: hsl(17, 98%, 56%);
     color: var(--white-color);
     padding: 0.25rem 0.75rem;
@@ -144,11 +168,11 @@ import Footer from "../components/Footer.astro";
     background: linear-gradient(135deg, hsl(0, 0%, 95%), hsl(0, 0%, 88%));
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .deal-img {
-    width: 200px;
+    width: clamp(140px, 40vw, 200px);
     transition: transform 0.4s;
   }
 
@@ -157,11 +181,11 @@ import Footer from "../components/Footer.astro";
   }
 
   .deal-info {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .deal-name {
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 4vw, 1.125rem);
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: hsl(0, 0%, 12%);
@@ -170,7 +194,7 @@ import Footer from "../components/Footer.astro";
   .deal-desc {
     font-size: var(--small-font-size);
     color: hsl(0, 0%, 40%);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     line-height: 1.5;
   }
 
@@ -178,11 +202,12 @@ import Footer from "../components/Footer.astro";
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
 
   .deal-price {
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 4vw, 1.25rem);
     font-weight: 700;
     color: hsl(17, 98%, 56%);
   }
@@ -205,15 +230,17 @@ import Footer from "../components/Footer.astro";
     align-items: center;
     gap: 0.5rem;
     transition: opacity 0.3s;
+    min-height: 44px;
   }
 
   .deal-button:hover {
     opacity: 0.85;
   }
 
-  @media (width >= 640px) {
+  @media (width >= 480px) {
     .deals-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
 
     .deal-featured {
@@ -221,6 +248,24 @@ import Footer from "../components/Footer.astro";
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
+    }
+  }
+
+  @media (width >= 768px) {
+    .page-hero {
+      padding-block: 7rem 3rem;
+    }
+
+    .deals-grid {
+      padding-block: 3rem 5rem;
+    }
+
+    .deal-img-wrapper {
+      padding: 2rem;
+    }
+
+    .deal-info {
+      padding: 1.5rem;
     }
   }
 
@@ -239,6 +284,12 @@ import Footer from "../components/Footer.astro";
 
     .deal-featured {
       grid-column: 1 / -1;
+    }
+  }
+
+  @media (width >= 2048px) {
+    .page-hero {
+      zoom: 1.2;
     }
   }
 </style>

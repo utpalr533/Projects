@@ -21,7 +21,9 @@ import Footer from "../components/Footer.astro";
             <i class="ri-map-pin-line contact-icon"></i>
             <div>
               <h3>Visit Us</h3>
-              <p>123 Fashion Avenue, Suite 200<br />New York, NY 10001</p>
+              <p>
+                123 Fashion Avenue, Suite 200<br />New York, NY 10001
+              </p>
             </div>
           </div>
 
@@ -45,7 +47,9 @@ import Footer from "../components/Footer.astro";
             <i class="ri-time-line contact-icon"></i>
             <div>
               <h3>Hours</h3>
-              <p>Mon–Fri: 9AM – 7PM<br />Sat: 10AM – 5PM<br />Sun: Closed</p>
+              <p>
+                Mon–Fri: 9AM – 7PM<br />Sat: 10AM – 5PM<br />Sun: Closed
+              </p>
             </div>
           </div>
         </div>
@@ -53,22 +57,45 @@ import Footer from "../components/Footer.astro";
         <form class="contact-form">
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john@example.com"
+              required
+            />
           </div>
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="How can we help?"
+            />
           </div>
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
           </div>
 
           <button type="submit" class="form-button">
@@ -83,14 +110,14 @@ import Footer from "../components/Footer.astro";
 
 <style>
   .page-hero {
-    padding-block: 9rem 3rem;
+    padding-block: 5rem 2rem;
     background: var(--sky-blue-color-gradient);
     text-align: center;
     color: var(--white-color);
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -98,20 +125,21 @@ import Footer from "../components/Footer.astro";
   .page-subtitle {
     font-size: var(--normal-font-size);
     opacity: 0.9;
+    padding-inline: 1rem;
   }
 
   .contact-section {
-    padding-block: 3rem 5rem;
+    padding-block: 2rem 4rem;
   }
 
   .contact-grid {
     display: grid;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .contact-info {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .contact-item {
@@ -121,14 +149,14 @@ import Footer from "../components/Footer.astro";
   }
 
   .contact-icon {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
     color: hsl(210, 96%, 45%);
     flex-shrink: 0;
     margin-top: 0.25rem;
   }
 
   .contact-item h3 {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 3vw, 1rem);
     font-weight: 600;
     margin-bottom: 0.25rem;
     color: hsl(0, 0%, 12%);
@@ -142,8 +170,8 @@ import Footer from "../components/Footer.astro";
 
   .contact-form {
     background: hsl(0, 0%, 98%);
-    border-radius: 1.5rem;
-    padding: 2rem;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
     display: grid;
     gap: 1.25rem;
   }
@@ -166,9 +194,11 @@ import Footer from "../components/Footer.astro";
     border: 1px solid hsl(0, 0%, 85%);
     border-radius: 0.75rem;
     font-family: var(--body-font);
-    font-size: var(--normal-font-size);
+    font-size: 16px;
     background: var(--white-color);
     transition: border-color 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .form-group input:focus,
@@ -196,16 +226,37 @@ import Footer from "../components/Footer.astro";
     gap: 0.5rem;
     transition: opacity 0.3s;
     border: none;
+    min-height: 48px;
+    width: 100%;
   }
 
   .form-button:hover {
     opacity: 0.9;
   }
 
+  @media (width >= 480px) {
+    .form-button {
+      width: auto;
+    }
+  }
+
   @media (width >= 768px) {
+    .page-hero {
+      padding-block: 7rem 3rem;
+    }
+
+    .contact-section {
+      padding-block: 3rem 5rem;
+    }
+
     .contact-grid {
       grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
       align-items: start;
+    }
+
+    .contact-form {
+      padding: 2rem;
     }
   }
 
@@ -220,6 +271,12 @@ import Footer from "../components/Footer.astro";
 
     .contact-form {
       padding: 2.5rem;
+    }
+  }
+
+  @media (width >= 2048px) {
+    .page-hero {
+      zoom: 1.2;
     }
   }
 </style>

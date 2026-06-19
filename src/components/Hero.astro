@@ -43,46 +43,44 @@ const slides: Slide[] = [
   <div class="home-container">
     <div class="home-swiper swiper">
       <div class="swiper-wrapper">
-        {
-          slides.map((slide) => (
-            <article class={`home-slider ${slide.colorClass} swiper-slide`}>
-              <div class="home-logoes">
-                <img
-                  src="/assets/img/logo-nike.svg"
-                  alt=""
-                  class="home-logo-1"
-                />
-                <img
-                  src="/assets/img/logo-nike.svg"
-                  alt=""
-                  class="home-logo-2"
-                />
-                <img
-                  src="/assets/img/logo-nike.svg"
-                  alt=""
-                  class="home-logo-3"
-                />
+        {slides.map((slide) => (
+          <article class={`home-slider ${slide.colorClass} swiper-slide`}>
+            <div class="home-logoes">
+              <img
+                src="/assets/img/logo-nike.svg"
+                alt=""
+                class="home-logo-1"
+              />
+              <img
+                src="/assets/img/logo-nike.svg"
+                alt=""
+                class="home-logo-2"
+              />
+              <img
+                src="/assets/img/logo-nike.svg"
+                alt=""
+                class="home-logo-3"
+              />
+            </div>
+
+            <div class="home-image" data-swiper-parallax="-800">
+              <img src={slide.img} alt={slide.name} class="home-img" />
+            </div>
+
+            <div class="home-data container">
+              <div class="home-info">
+                <h3 class="home-name">{slide.name}</h3>
+                <p class="home-desc">{slide.desc}</p>
               </div>
 
-              <div class="home-image" data-swiper-parallax="-800">
-                <img src={slide.img} alt={slide.name} class="home-img" />
-              </div>
+              <p class="home-price">{slide.price}</p>
 
-              <div class="home-data container">
-                <div class="home-info">
-                  <h3 class="home-name">{slide.name}</h3>
-                  <p class="home-desc">{slide.desc}</p>
-                </div>
-
-                <p class="home-price">{slide.price}</p>
-
-                <button class="home-button">
-                  <i class="ri-shopping-bag-4-fill" /> Buy Now
-                </button>
-              </div>
-            </article>
-          ))
-        }
+              <button class="home-button">
+                <i class="ri-shopping-bag-4-fill" /> Buy Now
+              </button>
+            </div>
+          </article>
+        ))}
       </div>
 
       <div class="swiper-pagination"></div>
@@ -93,47 +91,50 @@ const slides: Slide[] = [
 <style>
   .home-slider {
     position: relative;
-    height: 100vh;
-    padding-block: 9.5rem 3rem;
+    height: 100dvh;
+    padding-block: 5rem 3rem;
     display: grid;
     align-items: center;
-    row-gap: 4rem;
+    row-gap: 2rem;
   }
 
   .home-logoes {
     position: absolute;
-    top: calc(50% - 12rem);
-    justify-self: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     opacity: 0.4;
+    width: min(90vw, 500px);
   }
 
   .home-logo-3 {
-    width: 320px;
+    width: 100%;
   }
 
   .home-logo-2 {
     position: absolute;
-    width: 270px;
-    right: 0;
-    bottom: 4rem;
+    width: 85%;
+    right: -5%;
+    bottom: -2rem;
     rotate: 5deg;
   }
 
   .home-logo-1 {
-    width: 220px;
+    width: 70%;
     position: absolute;
-    right: 0;
-    top: -5rem;
+    right: -5%;
+    top: -3rem;
     rotate: 5deg;
   }
 
   .home-image {
     z-index: 10;
     justify-self: center;
+    max-width: 90vw;
   }
 
   .home-img {
-    width: 320px;
+    width: min(80vw, 320px);
   }
 
   .home-green {
@@ -155,6 +156,7 @@ const slides: Slide[] = [
   .home-data {
     text-align: center;
     color: var(--white-color);
+    padding-bottom: 1rem;
   }
 
   .home-name {
@@ -167,11 +169,12 @@ const slides: Slide[] = [
     font-size: var(--normal-font-size);
     max-width: 380px;
     margin-inline: auto;
+    padding-inline: 0.5rem;
   }
 
   .home-price {
     font: 600 var(--bigger-font-size) var(--body-font);
-    margin-block: 1rem 2rem;
+    margin-block: 1rem 1.5rem;
   }
 
   .home-button {
@@ -185,6 +188,7 @@ const slides: Slide[] = [
     column-gap: 0.5rem;
     cursor: pointer;
     transition: box-shadow 0.4s;
+    min-height: 44px;
   }
 
   .home-button i {
@@ -198,23 +202,65 @@ const slides: Slide[] = [
 
   .home .swiper-pagination {
     top: initial;
-    bottom: calc(50% - 5rem);
+    bottom: calc(50% - 3rem);
   }
 
   .home .swiper-pagination-bullet {
     background: var(--white-color);
+    width: 10px;
+    height: 10px;
   }
 
-  @media (width <= 320px) {
+  @media (width >= 375px) {
+    .home-slider {
+      padding-block: 9.5rem 3rem;
+      row-gap: 4rem;
+    }
+
+    .home-img {
+      width: 320px;
+    }
+
     .home-logoes {
-      zoom: 0.85;
+      width: min(80vw, 500px);
+      top: calc(50% - 12rem);
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    .home .swiper-pagination {
+      bottom: calc(50% - 5rem);
     }
   }
 
   @media (width >= 540px) {
     .home-slider {
-      grid-template-columns: 500px;
+      grid-template-columns: min(500px, 100%);
       justify-content: center;
+    }
+
+    .home-logo-3 {
+      width: 500px;
+    }
+
+    .home-logo-2 {
+      width: 85%;
+      bottom: 4rem;
+    }
+
+    .home-logo-1 {
+      width: 70%;
+      top: -5rem;
+    }
+
+    .home-logoes {
+      width: auto;
+    }
+  }
+
+  @media (width >= 768px) {
+    .home-img {
+      width: 400px;
     }
   }
 
@@ -229,6 +275,7 @@ const slides: Slide[] = [
 
     .home-logoes {
       top: calc(50% - 5rem);
+      left: 50%;
     }
 
     .home-logo-3 {
@@ -264,6 +311,7 @@ const slides: Slide[] = [
 
     .home-desc {
       margin-inline: unset;
+      padding-inline: 0;
     }
 
     .home-name {
@@ -286,12 +334,13 @@ const slides: Slide[] = [
   @media (width <= 420px) and (height <= 670px) {
     .home-slider {
       height: initial;
+      padding-block: 5rem 2rem;
     }
   }
 
   @media (width >= 1536px) and (height >= 864px) {
     .home-slider {
-      height: 100vh;
+      height: 100dvh;
     }
   }
 

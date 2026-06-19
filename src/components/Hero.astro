@@ -1,5 +1,4 @@
 ---
-
 interface Slide {
   name: string;
   desc: string;
@@ -10,67 +9,80 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    name: "Resistance",
-    desc: "Jackets designed to withstand anything. Durable materials, reinforced seams, and wind and rain protection to accompany you through any challenge.",
+    name: "Rajver Jacket",
+    desc: "The Rajveer Walla Jacket is built for those who never back down Combining rugged durability, all-day comfort, and timeless style, it's ready for every journey—whether you're chasing goals  or creating your own path.",
     price: "$110.00",
     img: "/assets/img/jacket-1.png",
     colorClass: "home-green",
   },
   {
-    name: "Comfy Snug",
-    desc: "Softness you feel from the first moment. These jackets hug your body with lightweight warmth, perfect for cold days without sacrificing style.",
+    name: "Utpal Jacket",
+    desc: "The Utpal Walla Jacket blends everyday comfort with effortless style. Designed for those who move with confidence, it keeps you ready for whatever the day throws your way.",
     price: "$99.00",
     img: "/assets/img/jacket-2.png",
     colorClass: "home-orange",
   },
   {
-    name: "Relaxed Fit",
-    desc: "Uncompromising comfort with a relaxed fit that gives you freedom of movement. Ideal for a casual, modern look that adapts to your daily routine.",
+    name: "Virat Jacket",
+    desc: "Crafted for confidence and built for comfort, the Virat Walla Jacket delivers a perfect blend of style, durability, and everyday performance. Wherever you go, make every entrance count.",
     price: "$105.00",
     img: "/assets/img/jacket-3.png",
     colorClass: "home-sky-blue",
   },
   {
-    name: "Protective Type",
-    desc: "More than a jacket, a barrier against the weather. Designed to offer maximum protection with thermal and waterproof technology, keeping you safe.",
+    name: "Akash",
+    desc: "Built for everyday adventures, the Akash Walla Jacket combines comfort, durability, and effortless style. Whether you'reheading out with friends or taking on the day's challenges, it keeps you looking sharp and feeling confident.",
     price: "$130.00",
     img: "/assets/img/jacket-4.png",
     colorClass: "home-purple",
   },
 ];
-
 ---
 
 <section class="home">
   <div class="home-container">
     <div class="home-swiper swiper">
       <div class="swiper-wrapper">
-        {slides.map((slide) => (
-          <article class={`home-slider ${slide.colorClass} swiper-slide`}>
-            <div class="home-logoes">
-              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-1" />
-              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-2" />
-              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-3" />
-            </div>
-
-            <div class="home-image" data-swiper-parallax="-800">
-              <img src={slide.img} alt={slide.name} class="home-img" />
-            </div>
-
-            <div class="home-data container">
-              <div class="home-info">
-                <h3 class="home-name">{slide.name}</h3>
-                <p class="home-desc">{slide.desc}</p>
+        {
+          slides.map((slide) => (
+            <article class={`home-slider ${slide.colorClass} swiper-slide`}>
+              <div class="home-logoes">
+                <img
+                  src="/assets/img/logo-nike.svg"
+                  alt=""
+                  class="home-logo-1"
+                />
+                <img
+                  src="/assets/img/logo-nike.svg"
+                  alt=""
+                  class="home-logo-2"
+                />
+                <img
+                  src="/assets/img/logo-nike.svg"
+                  alt=""
+                  class="home-logo-3"
+                />
               </div>
 
-              <p class="home-price">{slide.price}</p>
+              <div class="home-image" data-swiper-parallax="-800">
+                <img src={slide.img} alt={slide.name} class="home-img" />
+              </div>
 
-              <button class="home-button">
-                <i class="ri-shopping-bag-4-fill"></i> Buy Now
-              </button>
-            </div>
-          </article>
-        ))}
+              <div class="home-data container">
+                <div class="home-info">
+                  <h3 class="home-name">{slide.name}</h3>
+                  <p class="home-desc">{slide.desc}</p>
+                </div>
+
+                <p class="home-price">{slide.price}</p>
+
+                <button class="home-button">
+                  <i class="ri-shopping-bag-4-fill" /> Buy Now
+                </button>
+              </div>
+            </article>
+          ))
+        }
       </div>
 
       <div class="swiper-pagination"></div>

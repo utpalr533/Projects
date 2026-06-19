@@ -6,11 +6,11 @@
 
     <div class="nav-menu" id="nav-menu">
       <ul class="nav-list">
-        <li><a href="/" class="nav-link active-link">Home</a></li>
-        <li><a href="/categories" class="nav-link">Categories</a></li>
-        <li><a href="/about" class="nav-link">About Us</a></li>
+        <li><a href="/" class="nav-link active-link">Aura Farm</a></li>
+        <li><a href="/categories" class="nav-link">Jacket Ki Dukan</a></li>
+        <li><a href="/about" class="nav-link">Hum Kaun Hai?</a></li>
         <li><a href="/special" class="nav-link">Special</a></li>
-        <li><a href="/contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Baat Karne ke liye</a></li>
       </ul>
 
       <button class="nav-close" id="nav-close" aria-label="Close menu">
@@ -164,29 +164,3 @@
     }
   }
 </style>
-
-<script>
-  const navMenu = document.getElementById("nav-menu");
-  const navToggle = document.getElementById("nav-toggle");
-  const navClose = document.getElementById("nav-close");
-
-  if (navToggle) {
-    navToggle.addEventListener("click", () => {
-      navMenu.classList.add("show-menu");
-    });
-  }
-
-  if (navClose) {
-    navClose.addEventListener("click", () => {
-      navMenu.classList.remove("show-menu");
-    });
-  }
-
-  const navLink = document.querySelectorAll(".nav-link");
-
-  const linkAction = () => {
-    const navMenu = document.getElementById("nav-menu");
-    navMenu.classList.remove("show-menu");
-  };
-  navLink.forEach((n) => n.addEventListener("click", linkAction));
-</script>

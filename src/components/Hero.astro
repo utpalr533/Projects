@@ -105,9 +105,9 @@ const slides: Slide[] = [
 
   .home-logoes {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 12rem);
     left: 50%;
-    translate: -50% -50%;
+    translate: -50% 0;
     opacity: 0.4;
     width: min(90vw, 500px);
   }
@@ -228,9 +228,6 @@ const slides: Slide[] = [
 
     .home-logoes {
       width: min(80vw, 500px);
-      top: calc(50% - 12rem);
-      left: 50%;
-      translate: -50% 0;
     }
 
     .home .swiper-pagination {

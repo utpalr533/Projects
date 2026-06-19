@@ -19,10 +19,11 @@
     </div>
 
     <div class="nav-actions">
-      <button class="nav-shop" aria-label="Shopping cart">
+      <button class="nav-shop" id="cartToggle" aria-label="Shopping cart">
         <i class="ri-shopping-bag-4-fill"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
       </button>
-      <button class="nav-search" aria-label="Search products">
+      <button class="nav-search" id="searchToggle" aria-label="Search products">
         <i class="ri-search-line"></i>
       </button>
       <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
@@ -68,6 +69,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    background: hsl(0, 80%, 55%);
+    color: var(--white-color);
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
   }
 
   @media (width <= 1150px) {
@@ -190,7 +209,6 @@
 </style>
 
 <script is:inline>
-  /*=============== SHOW MENU ===============*/
   const navMenu = document.getElementById("nav-menu"),
     navToggle = document.getElementById("nav-toggle"),
     navClose = document.getElementById("nav-close");
@@ -207,12 +225,19 @@
     });
   }
 
-  /*=============== REMOVE MENU MOBILE ===============*/
   const navLink = document.querySelectorAll(".nav-link");
-
   const linkAction = () => {
     const navMenu = document.getElementById("nav-menu");
     navMenu.classList.remove("show-menu");
   };
   navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+  document.getElementById("cartToggle")?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const tryToggle = () => {
+      if (window.Cart) { window.Cart.toggle(); return; }
+      requestAnimationFrame(tryToggle);
+    };
+    tryToggle();
+  });
 </script>

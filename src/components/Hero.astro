@@ -75,7 +75,12 @@ const slides: Slide[] = [
 
               <p class="home-price">{slide.price}</p>
 
-              <button class="home-button">
+              <button class="home-button"
+                data-add-to-cart
+                data-product-id={slide.name.toLowerCase().replace(/\s+/g, "-")}
+                data-product-name={slide.name}
+                data-product-price={slide.price.replace("$", "")}
+                data-product-image={slide.img}>
                 <i class="ri-shopping-bag-4-fill" /> Buy Now
               </button>
             </div>

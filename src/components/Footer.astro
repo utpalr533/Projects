@@ -1,0 +1,122 @@
+---
+
+const currentYear = new Date().getFullYear();
+
+---
+
+<footer class="footer">
+  <div class="footer-container container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-nike-name.svg" alt="Jacket Store" class="footer-logo" />
+        <p class="footer-desc">
+          Premium outerwear crafted for style, comfort, and durability.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul>
+          <li><a href="/categories" class="footer-link">Categories</a></li>
+          <li><a href="/about" class="footer-link">About Us</a></li>
+          <li><a href="/special" class="footer-link">Special</a></li>
+          <li><a href="/contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="footer-title">Follow Us</h4>
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Jacket Store. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: hsl(0, 0%, 8%);
+    color: var(--white-color);
+    padding-block: 3rem 1.5rem;
+  }
+
+  .footer-content {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .footer-logo {
+    width: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-desc {
+    font-size: var(--small-font-size);
+    opacity: 0.7;
+    max-width: 280px;
+    line-height: 1.6;
+  }
+
+  .footer-title {
+    font-size: var(--normal-font-size);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+  }
+
+  .footer-link {
+    color: var(--white-color);
+    opacity: 0.7;
+    font-size: var(--small-font-size);
+    transition: opacity 0.3s;
+  }
+
+  .footer-link:hover {
+    opacity: 1;
+  }
+
+  .footer-social-icons {
+    display: flex;
+    column-gap: 1rem;
+  }
+
+  .footer-social-icons a {
+    color: var(--white-color);
+    font-size: 1.25rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .footer-social-icons a:hover {
+    opacity: 1;
+  }
+
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+    text-align: center;
+    font-size: var(--small-font-size);
+    opacity: 0.5;
+  }
+
+  @media (width >= 768px) {
+    .footer-content {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+  }
+</style>

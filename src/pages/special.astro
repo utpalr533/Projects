@@ -1,0 +1,244 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main class="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Special Offers</h1>
+        <p class="page-subtitle">Limited-time deals you don't want to miss</p>
+      </div>
+    </section>
+
+    <section class="deals-grid container">
+      <article class="deal-card deal-featured">
+        <div class="deal-badge">Best Seller</div>
+        <div class="deal-img-wrapper">
+          <img src="/assets/img/jacket-2.png" alt="Comfy Snug" class="deal-img" />
+        </div>
+        <div class="deal-info">
+          <h2 class="deal-name">Comfy Snug — Winter Pack</h2>
+          <p class="deal-desc">Lightweight warmth for the coldest months. Get the full winter experience.</p>
+          <div class="deal-pricing">
+            <span class="deal-price">$79.00</span>
+            <span class="deal-old-price">$99.00</span>
+          </div>
+          <button class="deal-button">
+            <i class="ri-shopping-bag-4-fill"></i> Shop Now
+          </button>
+        </div>
+      </article>
+
+      <article class="deal-card">
+        <div class="deal-badge">-20%</div>
+        <div class="deal-img-wrapper">
+          <img src="/assets/img/jacket-4.png" alt="Protective Type" class="deal-img" />
+        </div>
+        <div class="deal-info">
+          <h2 class="deal-name">Protective Type</h2>
+          <p class="deal-desc">Weatherproof technology at an unbeatable price.</p>
+          <div class="deal-pricing">
+            <span class="deal-price">$104.00</span>
+            <span class="deal-old-price">$130.00</span>
+          </div>
+          <button class="deal-button">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="deal-card">
+        <div class="deal-badge">New</div>
+        <div class="deal-img-wrapper">
+          <img src="/assets/img/jacket-3.png" alt="Relaxed Fit" class="deal-img" />
+        </div>
+        <div class="deal-info">
+          <h2 class="deal-name">Relaxed Fit</h2>
+          <p class="deal-desc">Casual comfort with a modern edge.</p>
+          <div class="deal-pricing">
+            <span class="deal-price">$89.00</span>
+            <span class="deal-old-price">$105.00</span>
+          </div>
+          <button class="deal-button">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="deal-card">
+        <div class="deal-badge">Bundle</div>
+        <div class="deal-img-wrapper">
+          <img src="/assets/img/jacket-1.png" alt="Resistance" class="deal-img" />
+        </div>
+        <div class="deal-info">
+          <h2 class="deal-name">Resistance + Beanie</h2>
+          <p class="deal-desc">Bundle and save on our toughest jacket with a matching beanie.</p>
+          <div class="deal-pricing">
+            <span class="deal-price">$125.00</span>
+            <span class="deal-old-price">$145.00</span>
+          </div>
+          <button class="deal-button">Shop Now</button>
+        </div>
+      </article>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding-block: 9rem 3rem;
+    background: var(--orange-color-gradient);
+    text-align: center;
+    color: var(--white-color);
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: var(--normal-font-size);
+    opacity: 0.9;
+  }
+
+  .deals-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 3rem 5rem;
+  }
+
+  .deal-card {
+    background: hsl(0, 0%, 98%);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px hsla(0, 0%, 0%, 0.08);
+  }
+
+  .deal-featured {
+    border: 2px solid hsl(17, 98%, 56%);
+  }
+
+  .deal-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: hsl(17, 98%, 56%);
+    color: var(--white-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: var(--small-font-size);
+    font-weight: 600;
+    z-index: 10;
+  }
+
+  .deal-img-wrapper {
+    background: linear-gradient(135deg, hsl(0, 0%, 95%), hsl(0, 0%, 88%));
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .deal-img {
+    width: 200px;
+    transition: transform 0.4s;
+  }
+
+  .deal-card:hover .deal-img {
+    transform: scale(1.08);
+  }
+
+  .deal-info {
+    padding: 1.5rem;
+  }
+
+  .deal-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: hsl(0, 0%, 12%);
+  }
+
+  .deal-desc {
+    font-size: var(--small-font-size);
+    color: hsl(0, 0%, 40%);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .deal-pricing {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .deal-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(17, 98%, 56%);
+  }
+
+  .deal-old-price {
+    font-size: var(--small-font-size);
+    color: hsl(0, 0%, 50%);
+    text-decoration: line-through;
+  }
+
+  .deal-button {
+    background: var(--black-color);
+    color: var(--white-color);
+    padding: 0.7rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s;
+  }
+
+  .deal-button:hover {
+    opacity: 0.85;
+  }
+
+  @media (width >= 640px) {
+    .deals-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .deal-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  @media (width >= 1150px) {
+    .page-hero {
+      padding-block: 11rem 4rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+    }
+
+    .deals-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .deal-featured {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

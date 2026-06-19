@@ -1,0 +1,311 @@
+---
+
+interface Slide {
+  name: string;
+  desc: string;
+  price: string;
+  img: string;
+  colorClass: string;
+}
+
+const slides: Slide[] = [
+  {
+    name: "Resistance",
+    desc: "Jackets designed to withstand anything. Durable materials, reinforced seams, and wind and rain protection to accompany you through any challenge.",
+    price: "$110.00",
+    img: "/assets/img/jacket-1.png",
+    colorClass: "home-green",
+  },
+  {
+    name: "Comfy Snug",
+    desc: "Softness you feel from the first moment. These jackets hug your body with lightweight warmth, perfect for cold days without sacrificing style.",
+    price: "$99.00",
+    img: "/assets/img/jacket-2.png",
+    colorClass: "home-orange",
+  },
+  {
+    name: "Relaxed Fit",
+    desc: "Uncompromising comfort with a relaxed fit that gives you freedom of movement. Ideal for a casual, modern look that adapts to your daily routine.",
+    price: "$105.00",
+    img: "/assets/img/jacket-3.png",
+    colorClass: "home-sky-blue",
+  },
+  {
+    name: "Protective Type",
+    desc: "More than a jacket, a barrier against the weather. Designed to offer maximum protection with thermal and waterproof technology, keeping you safe.",
+    price: "$130.00",
+    img: "/assets/img/jacket-4.png",
+    colorClass: "home-purple",
+  },
+];
+
+---
+
+<section class="home">
+  <div class="home-container">
+    <div class="home-swiper swiper">
+      <div class="swiper-wrapper">
+        {slides.map((slide) => (
+          <article class={`home-slider ${slide.colorClass} swiper-slide`}>
+            <div class="home-logoes">
+              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-1" />
+              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-2" />
+              <img src="/assets/img/logo-nike.svg" alt="" class="home-logo-3" />
+            </div>
+
+            <div class="home-image" data-swiper-parallax="-800">
+              <img src={slide.img} alt={slide.name} class="home-img" />
+            </div>
+
+            <div class="home-data container">
+              <div class="home-info">
+                <h3 class="home-name">{slide.name}</h3>
+                <p class="home-desc">{slide.desc}</p>
+              </div>
+
+              <p class="home-price">{slide.price}</p>
+
+              <button class="home-button">
+                <i class="ri-shopping-bag-4-fill"></i> Buy Now
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-slider {
+    position: relative;
+    height: 100vh;
+    padding-block: 9.5rem 3rem;
+    display: grid;
+    align-items: center;
+    row-gap: 4rem;
+  }
+
+  .home-logoes {
+    position: absolute;
+    top: calc(50% - 12rem);
+    justify-self: center;
+    opacity: 0.4;
+  }
+
+  .home-logo-3 {
+    width: 320px;
+  }
+
+  .home-logo-2 {
+    position: absolute;
+    width: 270px;
+    right: 0;
+    bottom: 4rem;
+    rotate: 5deg;
+  }
+
+  .home-logo-1 {
+    width: 220px;
+    position: absolute;
+    right: 0;
+    top: -5rem;
+    rotate: 5deg;
+  }
+
+  .home-image {
+    z-index: 10;
+    justify-self: center;
+  }
+
+  .home-img {
+    width: 320px;
+  }
+
+  .home-green {
+    background: var(--green-color-gradient);
+  }
+
+  .home-orange {
+    background: var(--orange-color-gradient);
+  }
+
+  .home-sky-blue {
+    background: var(--sky-blue-color-gradient);
+  }
+
+  .home-purple {
+    background: var(--purple-color-gradient);
+  }
+
+  .home-data {
+    text-align: center;
+    color: var(--white-color);
+  }
+
+  .home-name {
+    font-size: var(--bigger-font-size);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-desc {
+    font-size: var(--normal-font-size);
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  .home-price {
+    font: 600 var(--bigger-font-size) var(--body-font);
+    margin-block: 1rem 2rem;
+  }
+
+  .home-button {
+    background: var(--white-color);
+    color: var(--black-color);
+    padding: 0.75rem 1rem;
+    border-radius: 4rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+    transition: box-shadow 0.4s;
+  }
+
+  .home-button i {
+    font-weight: initial;
+    font-size: 1.5rem;
+  }
+
+  .home-button:hover {
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.1);
+  }
+
+  .home .swiper-pagination {
+    top: initial;
+    bottom: calc(50% - 5rem);
+  }
+
+  .home .swiper-pagination-bullet {
+    background: var(--white-color);
+  }
+
+  @media (width <= 320px) {
+    .home-logoes {
+      zoom: 0.85;
+    }
+  }
+
+  @media (width >= 540px) {
+    .home-slider {
+      grid-template-columns: 500px;
+      justify-content: center;
+    }
+  }
+
+  @media (width >= 1150px) {
+    .home-slider {
+      height: initial;
+      grid-template-columns: initial;
+      justify-content: initial;
+      row-gap: 2rem;
+      padding-block: 10.5rem 4rem;
+    }
+
+    .home-logoes {
+      top: calc(50% - 5rem);
+    }
+
+    .home-logo-3 {
+      width: 790px;
+    }
+
+    .home-logo-2 {
+      width: 670px;
+      bottom: 10rem;
+    }
+
+    .home-logo-1 {
+      width: 540px;
+      top: -12.5rem;
+    }
+
+    .home-img {
+      width: 550px;
+    }
+
+    .home-data {
+      width: 1120px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .home-info {
+      width: 380px;
+      text-align: initial;
+    }
+
+    .home-desc {
+      margin-inline: unset;
+    }
+
+    .home-name {
+      margin-bottom: 1rem;
+    }
+
+    .home-price {
+      margin: 0;
+    }
+
+    .home-button {
+      justify-self: flex-end;
+    }
+
+    .home .swiper-pagination {
+      bottom: calc(50% - 16rem);
+    }
+  }
+
+  @media (width <= 420px) and (height <= 670px) {
+    .home-slider {
+      height: initial;
+    }
+  }
+
+  @media (width >= 1536px) and (height >= 864px) {
+    .home-slider {
+      height: 100vh;
+    }
+  }
+
+  @media (width >= 2048px) {
+    .home-logoes,
+    .home-img,
+    .home-data,
+    .home .swiper-pagination {
+      zoom: 1.2;
+    }
+  }
+</style>
+
+<script>
+  const swiperHome = new Swiper(".home-swiper", {
+    loop: true,
+    speed: 800,
+    effect: "fade",
+    parallax: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
+</script>

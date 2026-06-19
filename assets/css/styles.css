@@ -1,0 +1,443 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --green-color-gradient: linear-gradient(
+    135deg,
+    hsl(98, 63%, 37%) 0%,
+    hsl(97, 45%, 71%) 100%
+  );
+  --orange-color-gradient: linear-gradient(
+    135deg,
+    hsl(17, 98%, 56%) 0%,
+    hsl(14, 97%, 64%) 100%
+  );
+  --sky-blue-color-gradient: linear-gradient(
+    135deg,
+    hsl(210, 96%, 55%) 0%,
+    hsl(205, 51%, 73%) 100%
+  );
+  --purple-color-gradient: linear-gradient(
+    135deg,
+    hsl(259, 92%, 63%) 0%,
+    hsl(260, 52%, 68%) 100%
+  );
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --bigger-font-size: 1.75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media (width >= 1150px) {
+  :root {
+    --bigger-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 100;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo img {
+  width: 50px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.nav-actions button {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+@media (width <=1150px) {
+  .nav-menu {
+    position: fixed;
+    top: -120%;
+    left: 0;
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.1);
+    backdrop-filter: blur(12px);
+    padding-block: 4rem;
+    z-index: 100;
+    transition: top 0.4s;
+  }
+}
+
+.nav-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-link::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--white-color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.5rem;
+  transition: width 0.4s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/* Change header styles */
+.scroll-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.1);
+  backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Active link */
+.active-link::after {
+  width: 100%;
+}
+
+/*=============== HOME ===============*/
+.home-slider {
+  position: relative;
+  height: 100vh;
+  padding-block: 9.5rem 3rem;
+  display: grid;
+  align-items: center;
+  row-gap: 4rem;
+}
+
+.home-logoes {
+  position: absolute;
+  top: calc(50% - 12rem);
+  justify-self: center;
+  opacity: 0.4;
+}
+
+.home-logo-3 {
+  width: 320px;
+}
+
+.home-logo-2 {
+  position: absolute;
+  width: 270px;
+  right: 0;
+  bottom: 4rem;
+  rotate: 5deg;
+}
+
+.home-logo-1 {
+  width: 220px;
+  position: absolute;
+  right: 0;
+  top: -5rem;
+  rotate: 5deg;
+}
+
+.home-image {
+  z-index: 10;
+  justify-self: center;
+}
+
+.home-img {
+  width: 320px;
+}
+
+.home-green {
+  background: var(--green-color-gradient);
+}
+
+.home-orange {
+  background: var(--orange-color-gradient);
+}
+
+.home-sky-blue {
+  background: var(--sky-blue-color-gradient);
+}
+
+.home-purple {
+  background: var(--purple-color-gradient);
+}
+
+.home-data {
+  text-align: center;
+  color: var(--white-color);
+}
+
+.home-name {
+  font-size: var(--bigger-font-size);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.home-price {
+  font: 600 var(--bigger-font-size) var(--body-font);
+  margin-block: 1rem 2rem;
+}
+
+.home-button {
+  background: var(--white-color);
+  color: var(--black-color);
+  padding: 0.75rem 1rem;
+  border-radius: 4rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.4s;
+}
+
+.home-button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+}
+
+.home-button:hover {
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Swiper class */
+.home .swiper-pagination {
+  top: initial;
+  bottom: calc(50% - 5rem);
+}
+
+.home .swiper-pagination-bullet {
+  background: var(--white-color);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices <> */
+@media (width <=320px) {
+  .home-logoes {
+    zoom: 0.85;
+  }
+}
+
+/* For medium devices <> */
+@media (width >=540px) {
+  .home-slider {
+    grid-template-columns: 500px;
+    justify-content: center;
+  }
+}
+
+/* For large devices <> */
+@media (width >=1150px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+
+  .nav-logo img {
+    width: 70px;
+  }
+
+  .nav-close,
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-actions {
+    column-gap: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  .home-slider {
+    height: initial;
+    grid-template-columns: initial;
+    justify-content: initial;
+    row-gap: 2rem;
+    padding-block: 10.5rem 4rem;
+  }
+
+  .home-logoes {
+    top: calc(50% - 5rem);
+  }
+
+  .home-logo-3 {
+    width: 790px;
+  }
+
+  .home-logo-2 {
+    width: 670px;
+    bottom: 10rem;
+  }
+
+  .home-logo-1 {
+    width: 540px;
+    top: -12.5rem;
+  }
+
+  .home-img {
+    width: 550px;
+  }
+
+  .home-data {
+    width: 1120px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .home-info {
+    width: 380px;
+    text-align: initial;
+  }
+
+  .home-name {
+    margin-bottom: 1rem;
+  }
+
+  .home-price {
+    margin: 0;
+  }
+
+  .home-button {
+    justify-self: flex-end;
+  }
+
+  .home .swiper-pagination {
+    bottom: calc(50% - 16rem);
+  }
+}
+
+/* For lower-end devices <> */
+@media (width <= 420px) and (height <= 670px) {
+  .home-slider {
+    height: initial;
+  }
+}
+
+/* For taller devices <> */
+@media (width >= 1536px) and (height >= 864px) {
+  .home-slider {
+    height: 100vh;
+  }
+}
+
+/* For 2K resolutions <> */
+@media (width >= 2048px)  {
+  .header,
+  .home-logoes,
+  .home-img,
+  .home-data,
+  .home .swiper-pagination {
+    zoom: 1.2;
+  }
+  
+}

@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main class="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Categories</h1>
+        <p class="page-subtitle">Explore our collection of premium jackets</p>
+      </div>
+    </section>
+
+    <section class="categories-grid container">
+      <article class="category-card">
+        <div class="category-img-wrapper">
+          <img src="/assets/img/jacket-1.png" alt="Men's Jackets" class="category-img" />
+        </div>
+        <div class="category-info">
+          <h2 class="category-name">Men's Collection</h2>
+          <p class="category-desc">Bold, rugged, and refined — jackets built for the modern man.</p>
+          <span class="category-count">12 styles</span>
+        </div>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-wrapper">
+          <img src="/assets/img/jacket-2.png" alt="Women's Jackets" class="category-img" />
+        </div>
+        <div class="category-info">
+          <h2 class="category-name">Women's Collection</h2>
+          <p class="category-desc">Elegant meets practical — effortlessly stylish outerwear for every occasion.</p>
+          <span class="category-count">10 styles</span>
+        </div>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-wrapper">
+          <img src="/assets/img/jacket-3.png" alt="Accessories" class="category-img" />
+        </div>
+        <div class="category-info">
+          <h2 class="category-name">Accessories</h2>
+          <p class="category-desc">Complete your look with hats, gloves, scarves, and more.</p>
+          <span class="category-count">8 items</span>
+        </div>
+      </article>
+
+      <article class="category-card">
+        <div class="category-img-wrapper">
+          <img src="/assets/img/jacket-4.png" alt="Limited Edition" class="category-img" />
+        </div>
+        <div class="category-info">
+          <h2 class="category-name">Limited Edition</h2>
+          <p class="category-desc">Exclusive drops you won't find anywhere else.</p>
+          <span class="category-count">4 styles</span>
+        </div>
+      </article>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding-block: 9rem 3rem;
+    background: var(--green-color-gradient);
+    text-align: center;
+    color: var(--white-color);
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: var(--normal-font-size);
+    opacity: 0.9;
+  }
+
+  .categories-grid {
+    display: grid;
+    gap: 2rem;
+    padding-block: 3rem 5rem;
+  }
+
+  .category-card {
+    background: hsl(0, 0%, 98%);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px hsla(0, 0%, 0%, 0.08);
+  }
+
+  .category-img-wrapper {
+    background: linear-gradient(135deg, hsl(0, 0%, 95%), hsl(0, 0%, 88%));
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .category-img {
+    width: 200px;
+    transition: transform 0.4s;
+  }
+
+  .category-card:hover .category-img {
+    transform: scale(1.08);
+  }
+
+  .category-info {
+    padding: 1.5rem;
+  }
+
+  .category-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: hsl(0, 0%, 12%);
+  }
+
+  .category-desc {
+    font-size: var(--small-font-size);
+    color: hsl(0, 0%, 40%);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .category-count {
+    font-size: var(--small-font-size);
+    font-weight: 600;
+    color: hsl(0, 0%, 60%);
+  }
+
+  @media (width >= 640px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (width >= 1150px) {
+    .page-hero {
+      padding-block: 11rem 4rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+    }
+
+    .categories-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+  }
+</style>

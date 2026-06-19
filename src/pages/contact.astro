@@ -1,0 +1,225 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main class="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">We'd love to hear from you</p>
+      </div>
+    </section>
+
+    <section class="contact-section container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="ri-map-pin-line contact-icon"></i>
+            <div>
+              <h3>Visit Us</h3>
+              <p>123 Fashion Avenue, Suite 200<br />New York, NY 10001</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="ri-phone-line contact-icon"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="ri-mail-line contact-icon"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>hello@jacketstore.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="ri-time-line contact-icon"></i>
+            <div>
+              <h3>Hours</h3>
+              <p>Mon–Fri: 9AM – 7PM<br />Sat: 10AM – 5PM<br />Sun: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-button">
+            <i class="ri-send-plane-fill"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding-block: 9rem 3rem;
+    background: var(--sky-blue-color-gradient);
+    text-align: center;
+    color: var(--white-color);
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: var(--normal-font-size);
+    opacity: 0.9;
+  }
+
+  .contact-section {
+    padding-block: 3rem 5rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .contact-info {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    color: hsl(210, 96%, 45%);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: hsl(0, 0%, 12%);
+  }
+
+  .contact-item p {
+    font-size: var(--small-font-size);
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    background: hsl(0, 0%, 98%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: var(--small-font-size);
+    font-weight: 600;
+    color: hsl(0, 0%, 20%);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid hsl(0, 0%, 85%);
+    border-radius: 0.75rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background: var(--white-color);
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: hsl(210, 96%, 55%);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-button {
+    background: hsl(210, 96%, 55%);
+    color: var(--white-color);
+    padding: 0.9rem 2rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s;
+    border: none;
+  }
+
+  .form-button:hover {
+    opacity: 0.9;
+  }
+
+  @media (width >= 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: start;
+    }
+  }
+
+  @media (width >= 1150px) {
+    .page-hero {
+      padding-block: 11rem 4rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+    }
+
+    .contact-form {
+      padding: 2.5rem;
+    }
+  }
+</style>
